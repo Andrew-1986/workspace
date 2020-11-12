@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Simple todo list</title>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	  	<link href="css/style.css" type="text/css" rel="stylesheet">
+	  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="content">
+				<div class="wrapper-todo js-wrapper-todo">
+					<h1 class="title">
+						Simple Todo List
+						<span class="subtitle">From Ruby Garage</span>
+					</h1>
+
+					<div class="todo js-todo">
+						<div class="todo-header has-todo-item d-flex hoverable has-hidden">
+							<div class="todo-item">
+								<i class="fa fa-tasks"></i>
+							</div>
+
+							<div class="todo-header-title todo-item wbr grow-1 js-todo-header-title">
+								Todo List
+							</div>
+
+							<div class="todo-item todo-controls hidden">
+								<i class="fa fa-pen js-edit-todo-header-title"></i>
+								<i class="fa fa-trash-alt js-del-todo-list"></i>
+							</div>
+						</div>
+
+						<div class="todo-search has-todo-item d-flex js-todo-search">
+							<div class="todo-item todo-search-item hoverable">
+								<i class="fa fa-plus js-show-input"></i>
+							</div>
+
+							<div class="todo-item d-flex grow-1 js-input-item" style="display: none;">
+								<input type="text" placeholder="Start typing here to create a task">
+								<button class="js-btn-submit hoverable" type="submit">Add Task</button>
+							</div>
+						</div>
+
+						<div class="todo-list js-todo-list">
+							<div class="has-todo-item d-flex has-hidden hoverable js-has-todo-item">
+								<div class="todo-item todo-item-check">
+									<input class="hoverable js-checkbox" type="checkbox" name="">
+								</div>
+
+								<div class="todo-item todo-item-title d-flex grow-1 wbr js-todo-item-title">
+									<span contenteditable="false">Todo List Item</span>
+									<input type="date" value="" class="js-datepicker">
+								</div>
+
+								<div class="todo-item todo-controls d-flex hidden">
+									<i class="fa fa-sort js-drag-todo-item"></i>
+									<i class="fa fa-calendar-alt js-datapicker"></i>
+									<i class="fa fa-pen js-edit-todo-item"></i>
+									<i class="fa fa-trash-alt js-del-todo-item"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="button-area">
+					<button class="js-add-list hoverable" type="submit">
+						<i class="fa fa-plus"></i>
+						Add TODO List
+					</button>
+				</div>
+			</div>
+
+			<footer class="footer">
+				&copy; Ruby Garage
+			</footer>
+		</div>
+
+		<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>
