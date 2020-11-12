@@ -108,7 +108,7 @@ $(document).ready(function(){
     function addToDoItem(inputTxt) {
         var html = '<div class="has-todo-item d-flex has-hidden hoverable js-has-todo-item">' +
                         '<div class="todo-item todo-item-check"><input class="js-checkbox" type="checkbox" name=""></div>' +
-                        '<div class="todo-item todo-item-title d-flex grow-1 wbr js-todo-item-title"><span contenteditable="false">' + inputTxt + '</span><input type="date" value="" class="js-datepicker"></div>' +
+                        '<div class="todo-item todo-item-title d-flex grow-1 wbr js-todo-item-title"><span contenteditable="false">' + inputTxt + '</span><div><input type="date" value="" class="hoverable js-datepicker"></div></div>' +
                         '<div class="todo-item todo-controls d-flex hidden">' +
                             '<i class="fa fa-sort js-drag-todo-item"></i>' +
                             '<i class="fa fa-calendar-alt js-show-datapicker"></i>' +
