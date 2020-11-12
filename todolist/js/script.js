@@ -122,7 +122,7 @@ $(document).ready(function(){
 
     // Todo list
     function addToDo() {
-        var list = '<div class="todo">'+
+        var list = '<div class="todo js-todo">'+
                         '<div class="todo-header has-todo-item d-flex hoverable has-hidden">'+
                             '<div class="todo-item">'+
                                 '<i class="fa fa-tasks"></i>'+
