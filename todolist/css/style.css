@@ -113,6 +113,10 @@ button {
 	font-size: 18px;
 }
 
+.todo-header-title:focus {
+	outline: none;
+}
+
 .todo-search {
 	background: linear-gradient(#dfdfdf 0%, #cecece 100%);
 }
@@ -213,6 +217,7 @@ button {
 	display: none;
 	width: 150px;
 	height: 20px;
+	margin-left: 10px;
 	color: inherit;
 	border: 1px solid #e8ecea;
 }
