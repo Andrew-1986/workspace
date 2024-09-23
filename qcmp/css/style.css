@@ -1,0 +1,302 @@
+/* Variables  */
+:root {
+    --form-padding: 80px;
+    --form-logo-item-x: 58px;
+    --form-logo-item-у-1: 30px;
+    --form-logo-item-у-2: 86px;
+    --color-white: #fff;
+    --color-gray: #636363;
+    --color-info: #3e9ffd;
+    --animation-time: 1.3s;
+}
+
+/* Main  */
+@font-face {
+    font-family: HelveticaNeue;
+    src: url(../fonts/HelveticaNeueCyr-Light.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'HelveticaNeue';
+    font-weight: 300;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #e5e5e5;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
+}
+
+h1, h2, h3, h4. h5, h6 {
+    margin: 0;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+/* Wrapper and Form */
+.wrapper {
+    height: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    overflow: auto;
+}
+
+.form-content,
+.form,
+.form_logo {
+    perspective: 1000px;
+}
+
+.form-content {
+    padding-top: 100px;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.form,
+.form_logo {
+    transform-style: preserve-3d;
+}
+
+.form {
+    position: relative;
+    width: min(96%, 720px);
+    padding: 155px var(--form-padding) var(--form-padding) var(--form-padding);
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0.5px 6px 32.5px rgba(0, 0, 0, 0.2);
+    animation: formDrop var(--animation-time) ease-out;
+}
+
+.form_logo {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-white);
+    border-radius: 30px;
+    box-shadow: 0.5px 6px 12px rgba(0, 0, 0, 0.07);
+    animation: formLogoDrop var(--animation-time) ease-out;
+}
+
+.form_logo_item {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    opacity: 0.8;
+    border-radius: 8px;
+    animation: itemDrop var(--animation-time) ease-out;
+}
+
+.form_logo_item_green {
+    --item-drop-distance: 240px;
+    right: var(--form-logo-item-x);
+    bottom: var(--form-logo-item-у-1);
+    background-color: #4ebf49;
+}
+
+.form_logo_item_purple {
+    --item-drop-distance: 120px;
+    right: var(--form-logo-item-x);
+    bottom: var(--form-logo-item-у-2);
+    background-color: #d1369c;
+}
+
+.form_logo_item_blue {
+    --item-drop-distance: 70px;
+    left: var(--form-logo-item-x);
+    top: var(--form-logo-item-у-2);
+    background-color: var(--color-info);
+}
+
+.form_logo_item_orange {
+    top: var(--form-logo-item-у-1);
+    left: var(--form-logo-item-x);
+    background-color: #f8911d;
+    animation: itemOrangeDrop var(--animation-time);
+}
+
+.form_title {
+    margin-bottom: 75px;
+    font-size: 60px;
+    text-align: center;
+}
+
+.form_title span {
+    display: block;
+    color: #787a78;
+    font-size: 30px;
+}
+
+.form_field {
+    margin-bottom: 40px;
+}
+
+.form_field > input,
+.form_button {
+    width: 100%;
+    height: 80px;
+    font-size: 32px;
+}
+
+.form_field > input {
+    padding: 0 25px;
+    border: 1px solid var(--color-gray);
+}
+
+.form_field > input:focus {
+    border: 2px solid var(--color-info);
+    outline: none;
+    box-shadow: inset 0px 3px 4.5px rgba(0, 0, 0, 0.39);
+}
+
+.form_field label {
+    color: var(--color-gray);
+    font-size: 26px;
+}
+
+.form_field__spaced {
+    margin-top: 10px;
+    margin-bottom: 90px;
+}
+
+.form_button {
+    color: var(--color-white);
+    background-color: var(--color-info);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0.3px 4px 3px rgba(0, 0, 0, 0.07);
+}
+
+/* Checkbox  */
+input[type="checkbox"] {
+    padding: 0;
+}
+
+.checkbox-custom,
+.checkbox-custom input[type="checkbox"],
+.checkbox-custom .input-checkbox {
+    width: 24px;
+    height: 24px;
+}
+
+.checkbox-custom {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.checkbox-custom input[type="checkbox"],
+.checkbox-custom .input-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.checkbox-custom input[type="checkbox"] {
+    opacity: 0;
+    z-index: 2;
+}
+
+.checkbox-custom .input-checkbox {
+    z-index: 1;
+}
+
+input[type="checkbox"]:checked+.input-checkbox {
+    background-color: #5294fb;
+    border: 0;
+}
+
+.input-checkbox {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border .2s linear;
+}
+
+input[type="checkbox"]:checked+.input-checkbox::before {
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    top: 3px;
+    left: 8px;
+    border: 1px solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    content: '';
+}
+
+/* Animation */
+@keyframes formDrop {
+    0% {
+        opacity: 0;
+        transform: rotateX(-40deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: rotateX(5deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+@keyframes formLogoDrop {
+    0% {
+        transform: translate(-50%, -50%) rotateX(80deg);
+    }
+
+    70% {
+        transform: translate(-50%, -50%) rotateX(20deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotateX(0);
+    }
+}
+
+@keyframes itemDrop {
+    0% {
+        transform: translateZ(var(--item-drop-distance));
+    }
+
+    90% {
+        transform: translateZ(0);
+    }
+}
+
+@keyframes itemOrangeDrop {
+    0% {
+        transform: translateZ(200px);
+    }
+
+    80% {
+        transform: translateZ(0);
+    }
+
+    90% {
+        transform: translateZ(0);
+    }
+
+    100% {
+        transform: translateZ(0);
+    }
+}
